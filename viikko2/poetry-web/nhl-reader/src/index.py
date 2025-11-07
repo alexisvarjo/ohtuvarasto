@@ -6,7 +6,7 @@ from player import Player
 def print_players(list: list):
     for player in list:
         print(
-            f"{player.name} team {player.team} goals {player.goals} assists {player.assists}"
+            f"{player.name:20} {player.team:15} {player.goals:2} + {player.assists:2} = {player.points:2}"
         )
 
 
@@ -17,6 +17,10 @@ def filter_by_nationality(nationality_code: str, list: list) -> list:
             res.append(player)
 
     return res
+
+
+def sort_by_points(players: list):
+    return sorted(players, key=lambda p: p.points, reverse=True)
 
 
 def main():
@@ -34,7 +38,8 @@ def main():
         players.append(player)
 
     filtered_list = filter_by_nationality("FIN", players)
-    print_players(filtered_list)
+    sorted_list = sort_by_points(filtered_list)
+    print_players(sorted_list)
 
 
 main()
