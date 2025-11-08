@@ -1,6 +1,13 @@
 class Varasto:
     def __init__(self, tilavuus, alku_saldo=0):
         self.tilavuus = max(0.0, tilavuus)
+        print("a")
+        print("a")
+        print("a")
+        print("a")
+        print("a")
+        print("a")
+        print("a")
 
         if alku_saldo < 0.0:
             # virheellinen, nollataan
